@@ -59,7 +59,7 @@ if (loginForm) {
 // Verify token
 async function verifyToken(token) {
   try {
-    const response = await fetch(`${API_URL}/api/auth/verify`, {
+    const response = await fetch(`${API_URL}/api/auth/login`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
