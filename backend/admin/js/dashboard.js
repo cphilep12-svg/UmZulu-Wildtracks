@@ -112,7 +112,7 @@ async function api(endpoint, options = {}) {
     }
   };
   
-  const response = await fetch(`${API_URL}${endpoint}`, {
+  const response = await fetch("https://umzulu-wildtrack.onrender.com/api/auth/login" , {
     ...defaultOptions,
     ...options,
     headers: {
