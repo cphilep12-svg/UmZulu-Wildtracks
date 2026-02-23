@@ -1,7 +1,5 @@
 
-Isiphile Simelane <cphilep12@gmail.com>
-22:30 (0 minutes ago)
-to me
+
 
 exports.login = async (req, res) => {
   try {
@@ -44,3 +42,4 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: "Login failed", error: err.message });
   }
 };
+
