@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | UmZulu Wildtrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo">
+          <span class="logo-primary">UmZulu</span>
+          <span class="logo-secondary">Wildtrack</span>
+        </div>
+        <h1>Admin Dashboard</h1>
+        <p>Sign in to manage bookings, messages, and safari packages</p>
+      </div>
+      
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            placeholder="Enter your username"
+            required
+            autocomplete="username"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+        
+        <div id="error-message" class="error-message"></div>
+        
+        <button type="submit" class="btn btn-primary btn-full">
+          <span class="btn-text">Sign In</span>
+          <span class="btn-loading" style="display: none;">
+            <svg class="spinner" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </svg>
+            Signing in...
+          </span>
+        </button>
+      </form>
+      
+      <div class="login-footer">
+        <a href="/">← Back to Website</a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/auth.js"></script>
+</body>
+</html>

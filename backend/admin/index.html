@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | UmZulu Wildtrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-primary">UmZulu</span>
+        <span class="logo-secondary">Wildtrack</span>
+      </div>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="#dashboard" class="nav-item active" data-section="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        Dashboard
+      </a>
+      <a href="#bookings" class="nav-item" data-section="bookings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        Bookings
+        <span id="booking-badge" class="badge" style="display: none;">0</span>
+      </a>
+      <a href="#messages" class="nav-item" data-section="messages">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Messages
+        <span id="message-badge" class="badge" style="display: none;">0</span>
+      </a>
+      <a href="#safaris" class="nav-item" data-section="safaris">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </svg>
+        Safari Packages
+      </a>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <span id="admin-username">Admin</span>
+        <button id="logout-btn" class="btn btn-sm btn-outline">Logout</button>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="content-header">
+      <h1 id="page-title">Dashboard</h1>
+      <div class="header-actions">
+        <a href="/" target="_blank" class="btn btn-sm btn-outline">View Website</a>
+      </div>
+    </header>
+    
+    <!-- Dashboard Section -->
+    <section id="dashboard-section" class="content-section active">
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 id="stat-total-bookings">0</h3>
+            <p>Total Bookings</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 id="stat-pending-bookings">0</h3>
+            <p>Pending</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 id="stat-confirmed-bookings">0</h3>
+            <p>Confirmed</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <h3 id="stat-unread-messages">0</h3>
+            <p>Unread Messages</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recent Activity -->
+      <div class="dashboard-grid">
+        <div class="card">
+          <div class="card-header">
+            <h2>Recent Bookings</h2>
+            <a href="#bookings" class="view-all">View All →</a>
+          </div>
+          <div class="card-body">
+            <div id="recent-bookings" class="activity-list">
+              <div class="loading">Loading...</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <h2>Recent Messages</h2>
+            <a href="#messages" class="view-all">View All →</a>
+          </div>
+          <div class="card-body">
+            <div id="recent-messages" class="activity-list">
+              <div class="loading">Loading...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Bookings Section -->
+    <section id="bookings-section" class="content-section">
+      <div class="card">
+        <div class="card-header">
+          <h2>All Bookings</h2>
+          <div class="filter-actions">
+            <select id="booking-filter" class="form-select">
+              <option value="">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Safari Package</th>
+                  <th>Date</th>
+                  <th>Guests</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookings-table">
+                <tr><td colspan="6" class="loading">Loading bookings...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Messages Section -->
+    <section id="messages-section" class="content-section">
+      <div class="card">
+        <div class="card-header">
+          <h2>All Messages</h2>
+          <div class="filter-actions">
+            <select id="message-filter" class="form-select">
+              <option value="">All Messages</option>
+              <option value="unread">Unread Only</option>
+              <option value="read">Read</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="messages-list" class="messages-list">
+            <div class="loading">Loading messages...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Safari Packages Section -->
+    <section id="safaris-section" class="content-section">
+      <div class="card">
+        <div class="card-header">
+          <h2>Safari Packages</h2>
+          <div class="header-actions">
+            <button id="seed-safaris-btn" class="btn btn-sm btn-secondary">Reset to Defaults</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="safaris-grid" class="safaris-admin-grid">
+            <div class="loading">Loading safari packages...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+  
+  <!-- Edit Safari Modal -->
+  <div id="edit-modal" class="modal" style="display: none;">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Edit Safari Package</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="edit-safari-form">
+          <input type="hidden" id="edit-safari-id">
+          <div class="form-group">
+            <label for="edit-name">Name</label>
+            <input type="text" id="edit-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-price">Price (R)</label>
+            <input type="number" id="edit-price" name="price" required min="0">
+          </div>
+          <div class="form-group">
+            <label for="edit-duration">Duration</label>
+            <select id="edit-duration" name="duration" required>
+              <option value="2 hours">2 hours</option>
+              <option value="3 hours">3 hours</option>
+              <option value="4 hours">4 hours</option>
+              <option value="Half day">Half day</option>
+              <option value="Full day">Full day</option>
+              <option value="Multi-day">Multi-day</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-max-guests">Max Guests</label>
+            <input type="number" id="edit-max-guests" name="maxGuests" required min="1" max="50">
+          </div>
+          <div class="form-group">
+            <label for="edit-description">Description</label>
+            <textarea id="edit-description" name="description" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="edit-available" name="isAvailable">
+              Available
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="edit-popular" name="isPopular">
+              Popular
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="save-safari-btn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Message Detail Modal -->
+  <div id="message-modal" class="modal" style="display: none;">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Message Details</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="message-detail-content"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline modal-cancel">Close</button>
+        <button class="btn btn-primary" id="mark-read-btn">Mark as Read</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
