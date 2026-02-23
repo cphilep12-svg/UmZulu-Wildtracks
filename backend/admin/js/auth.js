@@ -32,13 +32,7 @@ if (loginForm) {
     errorMessage.classList.remove('show');
     
     try {
-      const response = await fetch("https://umzulu-wildtrack.onrender.com/api/auth/login", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-      });
+      const response = await fetch("https://umzulu-wildtrack.onrender.com/api/auth/login");
       
       const data = await response.json();
       
