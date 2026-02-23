@@ -5,7 +5,7 @@
 
 // API Configuration
 const API_URL = window.location.origin.includes('localhost') 
-  ? 'http://localhost:5000' 
+  ? 'https://umzulu-wildtracks.onrender.com' 
   : window.location.origin;
 
 // DOM Ready
